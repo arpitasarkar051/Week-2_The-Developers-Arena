@@ -1,0 +1,123 @@
+# test_cases.txt
+# Student Grade Calculator – manual test cases
+# Program: grade_calculator.py
+
+--------------------------------------------------
+Test Case 1: Grade A (high marks)
+--------------------------------------------------
+Input:
+  Enter student name: Riya
+  Enter marks (0-100): 95
+
+Expected output (key points):
+  📊 RESULT FOR RIYA:
+  Marks: 95/100
+  Grade: A
+  Message: Contains words like "Excellent" or "star learner" and a positive emoji (🌟).
+
+--------------------------------------------------
+Test Case 2: Grade B (your sample)
+--------------------------------------------------
+Input:
+  Enter student name: Priya
+  Enter marks (0-100): 85
+
+Expected output (key points):
+  📊 RESULT FOR PRIYA:
+  Marks: 85/100
+  Grade: B
+  Message: "Very Good! Keep it up! 👍"
+
+--------------------------------------------------
+Test Case 3: Grade C
+--------------------------------------------------
+Input:
+  Enter student name: Arjun
+  Enter marks (0-100): 72
+
+Expected output (key points):
+  📊 RESULT FOR ARJUN:
+  Marks: 72/100
+  Grade: C
+  Message: Says "Good job" or "Good effort" and talks about practicing/improving.
+
+--------------------------------------------------
+Test Case 4: Grade D
+--------------------------------------------------
+Input:
+  Enter student name: Neha
+  Enter marks (0-100): 61
+
+Expected output (key points):
+  📊 RESULT FOR NEHA:
+  Marks: 61/100
+  Grade: D
+  Message: Mentions "You passed" and encourages more work.
+
+--------------------------------------------------
+Test Case 5: Grade F (low marks)
+--------------------------------------------------
+Input:
+  Enter student name: Rahul
+  Enter marks (0-100): 40
+
+Expected output (key points):
+  📊 RESULT FOR RAHUL:
+  Marks: 40/100
+  Grade: F
+  Message: Supportive, like "Don't give up" or "Try again", with no negative language.
+
+--------------------------------------------------
+Test Case 6: Invalid marks – too low
+--------------------------------------------------
+Input:
+  Enter student name: Priya
+  Enter marks (0-100): -5
+
+Expected behavior:
+  - Program prints: "Marks must be between 0 and 100. Please try again."
+  - Asks again for marks until a valid value (0–100) is entered.
+
+--------------------------------------------------
+Test Case 7: Invalid marks – too high
+--------------------------------------------------
+Input:
+  Enter student name: Priya
+  Enter marks (0-100): 120
+
+Expected behavior:
+  - Program prints: "Marks must be between 0 and 100. Please try again."
+  - Asks again for marks until a valid value (0–100) is entered.
+
+--------------------------------------------------
+Test Case 8: Invalid input – not a number
+--------------------------------------------------
+Input:
+  Enter student name: Priya
+  Enter marks (0-100): abc
+
+Expected behavior:
+  - Program prints: "Invalid input. Please enter a numeric value for marks."
+  - Asks again for marks until a valid numeric value between 0 and 100 is entered.
+
+--------------------------------------------------
+Test Case 9: Boundary value 0
+--------------------------------------------------
+Input:
+  Enter student name: Sam
+  Enter marks (0-100): 0
+
+Expected output (key points):
+  Grade: F
+  Message: Encouraging and supportive (no harsh wording).
+
+--------------------------------------------------
+Test Case 10: Boundary value 100
+--------------------------------------------------
+Input:
+  Enter student name: Anu
+  Enter marks (0-100): 100
+
+Expected output (key points):
+  Grade: A
+  Message: Very strong positive praise (top performance).
