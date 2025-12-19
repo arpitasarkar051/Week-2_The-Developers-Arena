@@ -1,55 +1,94 @@
 # Student Grade Calculator
 
-This project is a simple Python console application that takes a student's marks, validates that the value is between 0 and 100, calculates the letter grade using if-elif-else statements, and displays an encouraging message based on the result.
+This project is a simple Python console application that asks for a student's name and marks, validates that the marks are between 0 and 100, then calculates a letter grade (A–F) and prints an encouraging message for the student.
 
 ---
 
-## Setup and installation
+## Project overview and objectives
 
-Steps (example for IDLE / any IDE):
-
-1. Open `grade_calculator.py` in IDLE or your preferred IDE.
-2. Run the script (for example, press `F5` in IDLE).
-3. When prompted, enter student marks between 0 and 100 and press Enter.
-
-No external libraries are required; only the Python standard library is used.[web:19]
+The Student Grade Calculator is designed to quickly determine a student's grade based on their marks using clear grade ranges and friendly feedback messages.  
+The main objectives of this project are:
+- Use `if`, `elif`, and `else` statements to implement grading logic.
+- Add input validation so only marks between 0 and 100 are accepted.
+- Create and use at least one function to keep the logic organized.
+- Display a formatted result that includes the student’s name, marks, grade, and an encouraging message.
 
 ---
+
+## Setup and installation instructions
+
+
+- A Python editor or IDE such as IDLE, VS Code, PyCharm, or Thonny.
+
+### Steps to run the program
+
+1. Download or clone this repository to your computer.
+2. Make sure the following files are in the same folder:
+   - `grade_calculator.py`
+   - `test_cases.txt`
+3. Open `grade_calculator.py` in your chosen editor or in IDLE.
+4. Run the program:
+   - In IDLE: press `F5` or choose **Run → Run Module**.
+   - In terminal/command prompt:  
+     `python grade_calculator.py`
+5. Follow the on-screen prompts:
+   - Enter the student’s name.
+   - Enter the marks between 0 and 100.
+  
+6. The program will display the result in this style:
+
+
 
 ## Code structure explanation
 
-Main files:
+### Files
+
 - `grade_calculator.py`  
-  - `calculate_grade_and_message(marks)`:  
-    - Input: numeric marks between 0 and 100.  
-    - Output: a tuple `(grade, message)`.  
-    - Logic: uses an if-elif-else chain:
-      - 90–100 → A with a very positive message.  
-      - 80–89 → B with an encouraging message.  
-      - 70–79 → C with a “good effort” message.  
-      - 60–69 → D with “you passed, work more” message.  
-      - 0–59  → F with a supportive “try again” message.[web:11][web:10]
-  - `get_valid_marks()`:
-    - Uses a `while True` loop to repeatedly ask for input.
-    - Uses `try` / `except ValueError` to ensure the input is numeric.[web:10]
-    - Checks that `0 <= marks <= 100`; if not, prints an error and asks again.
-  - `main()`:
-    - Prints a title.
-    - Calls `get_valid_marks()` to read and validate the marks.
-    - Calls `calculate_grade_and_message(marks)` to compute the grade and message.
-    - Prints marks, grade, and the encouraging message.
+  Main Python script containing all the logic for:
+  - Reading input from the user.
+  - Validating the marks.
+  - Calculating the grade.
+  - Printing the formatted result and message.
 
 - `test_cases.txt`  
-  - Contains sample inputs and the expected grade/message type to help manually test the program.
+  A text file listing manual test cases (sample inputs and expected outputs/behaviors) used to check that the program works correctly.
 
-This structure keeps grading logic inside a dedicated function and separates user input, validation, and output into different parts, which is recommended for clear, beginner-friendly Python projects.[web:16]
+### Main functions and logic
+
+- `calculate_grade_and_message(marks)`  
+  - Input: a numeric `marks` value between 0 and 100.  
+  - Output: a tuple `(grade, message)` where:
+    - `grade` is one of `"A"`, `"B"`, `"C"`, `"D"`, `"F"`.
+    - `message` is an encouraging sentence that matches the grade.  
+  - Grading logic (using `if-elif-else`):
+    - `marks >= 90` → Grade A → very strong positive message.
+    - `marks >= 80` → Grade B → “Very Good! Keep it up!” style message.
+    - `marks >= 70` → Grade C → “Good job” and “keep practicing” message.
+    - `marks >= 60` → Grade D → “You passed” and “keep working” message.
+    - Otherwise        → Grade F → supportive “don’t give up / try again” message.
+
+- `get_valid_marks()`  
+  - Continuously asks the user to enter marks until valid input is provided.
+  - Uses `try` / `except` to catch non-numeric values.
+  - Checks that `0 <= marks <= 100`.
+  - Prints error messages for:
+    - Non-numeric input.
+    - Marks outside the 0–100 range.
+  - Returns a valid numeric marks value.
+
+- `main()`  
+  - Prints a title: “Student Grade Calculator”.
+  - Asks for the student’s name.
+  - Calls `get_valid_marks()` to safely read the marks.
+  - Calls `calculate_grade_and_message(marks)` to get the grade and message.
+  - Converts the student’s name to uppercase for the result heading.
+  - Prints a formatted result block, including:
+    - The student’s name in uppercase.
+    - Marks out of 100.
+    - Letter grade.
+    - Encouraging message.
+
+This structure separates concerns: one function for grading, one for validation, and one main entry point that coordinates everything.
 
 ---
-
-## Screenshots of working application
-
-Add screenshots to show the program running for different cases. For example:
-
- Create a folder named `screenshots` in your repository.
-
 
